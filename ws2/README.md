@@ -1,0 +1,1 @@
+Dokumentation zum Workshop 2: _Fortgeschrittene Datenvalidierung mittels ilivalidator und Validierungsmodellen/Konsistenzbedingungen_
