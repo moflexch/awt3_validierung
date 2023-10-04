@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Version    | Who | Modification
+=======================================================================================
+2023-03-17 | BLW | BID und TID durch sprechende Einträge ersetzt
+
+File LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.xml VERSION ="2023-03-17" (https://models.geo.admin.ch/BLW/)
+-->
+<TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+  <HEADERSECTION SENDER="ili2pg-4.10.0-c2af4b50c5475f788286f974812b52bb0f9b19bc" VERSION="2.3">
+    <MODELS>
+      <MODEL NAME="InternationalCodes_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="Localisation_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="LocalisationCH_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="Dictionaries_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="DictionariesCH_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="Units" VERSION="2012-02-20" URI="http://www.interlis.ch/models"/>
+      <MODEL NAME="CatalogueObjects_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="CatalogueObjectTrees_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="CoordSys" VERSION="2015-11-24" URI="http://www.interlis.ch/models"/>
+      <MODEL NAME="GeometryCHLV03_V1" VERSION="2017-12-04" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="GeometryCHLV95_V1" VERSION="2017-12-04" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0" VERSION="2023-03-17" URI="https://models.geo.admin.ch/BLW/"/>
+      <MODEL NAME="LWB_Landwirtschaftliche_Zonengrenzen_V2_0" VERSION="2023-03-17" URI="https://models.geo.admin.ch/BLW/"/> 
+    </MODELS>
+  </HEADERSECTION>
+  <DATASECTION>
+    <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge BID="ch.admin.blw.lwb_landwirtschaftliche_zonengrenzen_kataloge_v2_0">
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="61">
+        <LZ_Code>61</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Sömmerungsgebiet</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Région d'estivage</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Regione d’estivazione</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="54">
+        <LZ_Code>54</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Bergzone IV</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Zone de montagne IV</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Zona di montagna IV</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="53">
+        <LZ_Code>53</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Bergzone III</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Zone de montagne III</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Zona di montagna III</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="52">
+        <LZ_Code>52</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Bergzone II</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Zone de montagne II</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Zona di montagna II</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="51">
+        <LZ_Code>51</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Bergzone I</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Zone de montagne I</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Zona di montagna I</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="41">
+        <LZ_Code>41</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Hügelzone</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Zone des collines</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Zona collinare</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="31">
+        <LZ_Code>31</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Talzone</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Zone de plaine</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Zona di pianura</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="99">
+        <LZ_Code>99</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Seen</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Lacs</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Laghi</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="100">
+        <LZ_Code>100</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Enklaven</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Enclaves</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Enclavi</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="77">
+        <LZ_Code>77</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Angestammte Fläche im Ausland</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Surfaces exploitées par tradition à l’étranger</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Superficie gestita all’estero per tradizione familiare</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+      <LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ TID="79">
+        <LZ_Code>79</LZ_Code>
+        <Typ>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Nicht angestammte Fläche im Ausland</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>fr</Language>
+                <Text>Surfaces à l’étranger non exploitées par tradition</Text>
+              </LocalisationCH_V1.LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>it</Language>
+                <Text>Superficie gestita all’estero non per tradizione familiare</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Typ>
+      </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_Typ>
+    </LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge>
+  </DATASECTION>
+</TRANSFER>
