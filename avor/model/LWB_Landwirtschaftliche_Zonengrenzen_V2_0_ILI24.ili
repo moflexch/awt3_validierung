@@ -1,0 +1,46 @@
+INTERLIS 2.4;
+
+/**
+  Unofficial model Landwirtschaftliche Zonengrenzen in INTERLIS 2.4
+  based on LWB_Landwirtschaftliche_Zonengrenzen_V2_0 and LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0
+
+  ! for educational use only !
+
+ */
+MODEL LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24 (de)
+AT "https://models.geo.admin.ch/BLW/"
+VERSION "2023-10-04"  =
+  IMPORTS CatalogueObjects_V2,LocalisationCH_V2;
+
+  TOPIC LZ_Kataloge(ABSTRACT)
+  EXTENDS CatalogueObjects_V2.Catalogues =
+
+    CLASS LZ_Katalog_Typ
+    EXTENDS CatalogueObjects_V2.Catalogues.Item =
+      LZ_Code : MANDATORY 0 .. 100;
+      Typ : MANDATORY LocalisationCH_V2.MultilingualText;
+      UNIQUE LZ_Code;
+    END LZ_Katalog_Typ;
+
+  END LZ_Kataloge;
+
+END LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.
+
+MODEL LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24 (de)
+AT "https://models.geo.admin.ch/BLW/"
+VERSION "2023-10-04"  =
+  IMPORTS GeometryCHLV95_V2,LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24;
+
+  TOPIC Zonengrenzen =
+
+    DEPENDS ON LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge;
+
+    CLASS LZ_Flaeche =
+      Flaeche : MANDATORY GeometryCHLV95_V2.Area;
+      Aenderungsdatum : MANDATORY INTERLIS.XMLDate;
+      Typ : MANDATORY REFERENCE TO (EXTERNAL) LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge.LZ_Katalog_Typ;
+    END LZ_Flaeche;
+
+  END Zonengrenzen;
+
+END LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24.
