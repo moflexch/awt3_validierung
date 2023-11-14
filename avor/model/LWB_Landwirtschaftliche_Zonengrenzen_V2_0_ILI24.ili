@@ -29,7 +29,7 @@ END LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.
 MODEL LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24 (de)
 AT "https://models.geo.admin.ch/BLW/"
 VERSION "2023-11-14"  =
-  IMPORTS Text_V2;
+  IMPORTS Text;
   IMPORTS GeometryCHLV95_V2,LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24;
 
   TOPIC Zonengrenzen =
@@ -37,13 +37,13 @@ VERSION "2023-11-14"  =
     DEPENDS ON LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge;
 
     DOMAIN
-      ProjektID = TEXT*12 CONSTRAINTS CheckProjektID : Text_V2.matches(THIS, "[0-9a-zA-Z_]{4}-[A-Z]{2}+.+[0-9]{4}$"); !! zB. z033-AG.2023
-
+      ProjektID = TEXT*12 CONSTRAINTS CheckProjektID : Text.matches(THIS, "[0-9]{4}-[A-Z]{2}$"); !! zB. "2023-AG"
+      
     CLASS MeliorationsProjekt =
       ProjektNummer : MANDATORY ProjektID;
       Bezeichnung : TEXT*200;
       Status : MANDATORY (geplant,laufend,abgeschlossen);
-      Eigenschaften : BAG OF TEXT*50;
+      Eigenschaften : BAG {0..3} OF TEXT*50;
     END MeliorationsProjekt;
 
     CLASS LZ_Flaeche =
