@@ -29,7 +29,6 @@ END LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.
 MODEL LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24 (de)
 AT "https://models.geo.admin.ch/BLW/"
 VERSION "2023-11-14"  =
-  IMPORTS Text;
   IMPORTS GeometryCHLV95_V2,LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24;
 
   TOPIC Zonengrenzen =
