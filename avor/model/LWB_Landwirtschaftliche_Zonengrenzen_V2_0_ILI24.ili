@@ -37,7 +37,8 @@ VERSION "2023-11-14"  =
     DEPENDS ON LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge;
 
     DOMAIN
-      ProjektID = TEXT*12 CONSTRAINTS CheckProjektID : Text.matches(THIS, "[0-9]{4}-[A-Z]{2}$"); !! zB. "2023-AG"
+      !!ProjektID = TEXT*12 CONSTRAINTS CheckProjektID : Text.matches(THIS, "[0-9]{4}-[A-Z]{2}$"); !! zB. "2023-AG"
+      ProjektID = TEXT*12;
       
     CLASS MeliorationsProjekt =
       ProjektNummer : MANDATORY ProjektID;
