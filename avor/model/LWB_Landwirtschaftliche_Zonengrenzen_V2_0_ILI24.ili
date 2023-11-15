@@ -1,7 +1,7 @@
 INTERLIS 2.4;
 
 /**
-  Unofficial model Landwirtschaftliche Zonengrenzen in INTERLIS 2.4
+  Modified model Landwirtschaftliche Zonengrenzen in INTERLIS 2.4
   based on LWB_Landwirtschaftliche_Zonengrenzen_V2_0 and LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0
 
   ! for educational use only !
@@ -37,7 +37,6 @@ VERSION "2023-11-14"  =
     DEPENDS ON LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge;
 
     DOMAIN
-      !!ProjektID = TEXT*12 CONSTRAINTS CheckProjektID : Text.matches(THIS, "[0-9]{4}-[A-Z]{2}$"); !! zB. "2023-AG"
       ProjektID = TEXT*12;
       
     CLASS MeliorationsProjekt =
