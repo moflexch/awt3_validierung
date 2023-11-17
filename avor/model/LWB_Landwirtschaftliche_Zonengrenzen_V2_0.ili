@@ -1,0 +1,62 @@
+INTERLIS 2.3;
+
+!! Version    | Who   | Modification
+!!----------------------------------------------------------------------------------------
+!! 2023-01-01 | BLW   | LV03 gelöscht, Klasse Bezugsjahr gelöscht, LZ_Code neuer Datentyp, Versionsnummer neu V2_0,
+!!                    | Erstellungsdatum in Aenderungsdatum umbenannt
+!! 2023-03-17 | BLW   | OID AS INTERLIS.UUIDOID für die Katalogeinträge und Zonengrenzen gelöscht
+
+/** Kataloge zu den Landwirtschaftlichen Zonengrenzen
+ */
+!!@ technicalContact=mailto:info@blw.admin.ch
+!!@ furtherInformation="https://www.blw.admin.ch/blw/de/home/politik/datenmanagement/geografisches-informationssystem-gis/landiwirtschaftliche-zonengrenzen.html"
+!!@ IDGeoIV=149.1
+MODEL LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0 (de)
+AT "https://models.geo.admin.ch/BLW/"
+VERSION "2023-03-17"  =
+  IMPORTS CatalogueObjects_V1,LocalisationCH_V1;
+
+  TOPIC LZ_Kataloge(ABSTRACT)
+  EXTENDS CatalogueObjects_V1.Catalogues =
+
+    /** dynamische Liste aller LZ-Typen
+     */
+    CLASS LZ_Katalog_Typ
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      LZ_Code : MANDATORY 0 .. 100;
+      Typ : MANDATORY LocalisationCH_V1.MultilingualText;
+      UNIQUE LZ_Code;
+    END LZ_Katalog_Typ;
+
+    STRUCTURE LZ_Katalog_TypRef
+    EXTENDS CatalogueObjects_V1.Catalogues.MandatoryCatalogueReference =
+      Reference (EXTENDED) : MANDATORY REFERENCE TO (EXTERNAL) LZ_Katalog_Typ;
+    END LZ_Katalog_TypRef;
+
+  END LZ_Kataloge;
+
+END LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.
+
+!!@ technicalContact=mailto:info@blw.admin.ch
+!!@ furtherInformation="https://www.blw.admin.ch/blw/de/home/politik/datenmanagement/geografisches-informationssystem-gis/landiwirtschaftliche-zonengrenzen.html"
+!!@ IDGeoIV=149.1
+MODEL LWB_Landwirtschaftliche_Zonengrenzen_V2_0 (de)
+AT "https://models.geo.admin.ch/BLW/"
+VERSION "2023-03-17"  =
+  IMPORTS GeometryCHLV95_V1,LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0;
+
+  TOPIC Zonengrenzen =
+
+    DEPENDS ON LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge;
+
+    /** Landwirtschaftliche Zonengrenzen
+     */
+    CLASS LZ_Flaeche =
+      Flaeche : MANDATORY GeometryCHLV95_V1.Area;
+      Aenderungsdatum : MANDATORY INTERLIS.XMLDate;
+      Typ : MANDATORY LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0.LZ_Kataloge.LZ_Katalog_TypRef;
+    END LZ_Flaeche;
+
+  END Zonengrenzen;
+
+END LWB_Landwirtschaftliche_Zonengrenzen_V2_0.
