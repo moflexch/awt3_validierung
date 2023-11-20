@@ -61,6 +61,10 @@ VERSION "2023-11-14"  =
 
 END LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24.
 
+
+
+!! Unterhalb dieser Zeile sind Auszüge für den Vortrag von Luethi Philipp untergebracht.
+
 !!@name=SAPProjNr
 MANDATORY CONSTRAINT SAPProjNr : Text.matches(THIS.ProjektNummer, "^[0-9]{4}-[A-Z]{2}$");
 
