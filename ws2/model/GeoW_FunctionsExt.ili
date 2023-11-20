@@ -1,0 +1,36 @@
+INTERLIS 2.4;
+TYPE MODEL GeoW_FunctionsExt
+  AT "mailto:info@geowerkstatt.ch" VERSION "2022-12-02" =
+    /**
+    * Geometrie-Funktionen
+    */
+    !!@ fn.description = "Ermittelt die Länge einer (bzw. die Summe mehrer) Linien-Geometrien. Für 'Objects' können Objekte oder Geometrien angegeben werden. Für 'LineAttr' soll der Pfad zur Linien-Geometrie in INTERLIS 2 Syntax angegeben werden. Falls 'Objects' bereits die Geometrien enthält, soll für 'LineAttr' 'UNDEFINED' übergeben werden. Wird über eine Beziehung die gleiche Geometrie mehrmals gefunden, wird dessen Länge mehrmals gezählt.";
+    !!@ fn.param = "Objects: Ausgangsobjekte oder Geometrien. LineAttr: Pfad zum Geometrieattribut oder UNDEFINED";
+    !!@ fn.return = "Länge der Geometrie";
+    !!@ fn.since = "2021-11-15";
+    FUNCTION GetLength (Objects: OBJECTS OF ANYCLASS; LineAttr: TEXT): NUMERIC;
+
+    !!@ fn.description = "Ermittelt die Fläche einer (bzw. die Summe mehrer) Polygon-Geometrien. Für 'Objects' können Objekte oder Geometrien angegeben werden. Für 'AreaAttr' soll der Pfad zur Flächen-Geometrie in INTERLIS 2 Syntax angegeben werden. Falls 'Objects' bereits die Geometrien enthält, soll für 'AreaAttr' 'UNDEFINED' übergeben werden. Wird über eine Beziehung die gleiche Geometrie mehrmals gefunden, wird dessen Fläche mehrmals gezählt.";
+    !!@ fn.param = "Objects: Ausgangsobjekte oder Geometrien. AreaAttr: Pfad zum Geometrieattribut oder UNDEFINED";
+    !!@ fn.return = "Fläche der Geometrie";
+    !!@ fn.since = "2021-11-15";
+    FUNCTION GetArea (Objects: OBJECTS OF ANYCLASS; AreaAttr: TEXT): NUMERIC;
+
+    !!@ fn.description = "Zählt die inneren Ringe in einer Fläche. Für 'Object' kann ein Objekt oder Geometrie angegeben werden. Für 'AreaAttr' soll der Pfad zur Flächen-Geometrie in INTERLIS 2 Syntax angegeben werden.. Falls 'Object' bereits die Geometrie enthält, soll für 'AreaAttr' 'UNDEFINED' übergeben werden.";
+    !!@ fn.param = "Object: Ausgangsobjekt oder Geometrie. AreaAttr: Pfad zum Geometrieattribut oder UNDEFINED";
+    !!@ fn.return = "Anzahl innerer Ringe der Flächengeometrie";
+    !!@ fn.since = "2022-12-02";
+    FUNCTION GetInnerRingsCount (Object: OBJECT OF ANYCLASS; AreaAttr: TEXT): NUMERIC;
+
+    !!@ fn.description = "Gruppiert die Eingabemenge gemäss dem übergebenen Attribut-Kriterium / -Pfad. Für 'Attr' soll der Pfad zum klassierenden Attribut in INTERLIS 2 Syntax angegeben werden.";
+    !!@ fn.param = "Objects: Ausgangsobjekte. Attr: Pfad zum Attribut welches die Klassierung bestimmen soll";
+    !!@ fn.return = "Zugehörige Gruppe gemäss Attr des aktuellen Kontextobjekt";
+    !!@ fn.since = "2022-12-02";
+    FUNCTION GetInGroups (Objects: OBJECTS OF ANYCLASS; Attr: TEXT): OBJECTS OF ANYCLASS;
+
+    !!@ fn.description = "Prüft, ob ein Objekt innerhalb einer gegebenen Testgeometrie liegt, welche aus einem externen Datensatz stammt. Der externe Datensatz muss sich in einer INTERLIS 2.3 Transferdatei befinden, die entweder im selben Ordner wie die GeoW_FunctionsExt JAR liegt oder sich in einem JAR befinden, das über den Java Classpath erreichbar ist.";
+    !!@ fn.param = "DatasetName: Qualifizierter Name des Attributes aus dem Transfermodells, in welchem die Objekte zur Prüfung bereitliegen. Objects: Objekt(e), über die TID identifiziert, welche zur Prüfung beigezogen werden. TestObject: Objekt, welches zu prüfen ist. TestObjectgeometry: Geometriefeld, bezogen auf das unter Testobject übergebene Objekt";
+    !!@ fn.return = "Boolean";
+    !!@ fn.since = "2022-12-05";
+    FUNCTION IsInsideExternalDataset (DatasetName: TEXT; Objects: TEXT; TestObject: OBJECT OF ANYCLASS; TestObjectgeometry: TEXT): BOOLEAN;
+END GeoW_FunctionsExt.
