@@ -1,0 +1,62 @@
+INTERLIS 2.4;
+
+/**
+  Modified model Landwirtschaftliche Zonengrenzen in INTERLIS 2.4
+  based on LWB_Landwirtschaftliche_Zonengrenzen_V2_0 and LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0
+
+  ! for educational use only !
+
+ */
+MODEL LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24 (de)
+AT "https://models.geo.admin.ch/BLW/"
+VERSION "2023-11-14"  =
+  IMPORTS CatalogueObjects_V2,LocalisationCH_V2;
+
+  TOPIC LZ_Kataloge(ABSTRACT)
+  EXTENDS CatalogueObjects_V2.Catalogues =
+
+    CLASS LZ_Katalog_Typ
+    EXTENDS CatalogueObjects_V2.Catalogues.Item =
+      LZ_Code : MANDATORY 0 .. 100;
+      Typ : MANDATORY LocalisationCH_V2.MultilingualText;
+      UNIQUE LZ_Code;
+    END LZ_Katalog_Typ;
+
+  END LZ_Kataloge;
+
+END LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.
+
+MODEL LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24 (de)
+AT "https://models.geo.admin.ch/BLW/"
+VERSION "2023-11-14"  =
+  IMPORTS Text, GeometryCHLV95_V2, GeoW_FunctionsExt;
+  IMPORTS LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24;
+
+  TOPIC Zonengrenzen =
+
+    DEPENDS ON LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge;
+
+    DOMAIN
+      ProjektID = TEXT*12;
+      
+    CLASS MeliorationsProjekt =
+      ProjektNummer : MANDATORY ProjektID;
+      Bezeichnung : TEXT*200;
+      Status : MANDATORY (geplant,laufend,abgeschlossen);
+      Eigenschaften : LIST {0..3} OF TEXT*50;
+    END MeliorationsProjekt;
+
+    CLASS LZ_Flaeche =
+      Flaeche : MANDATORY GeometryCHLV95_V2.Surface;
+      Aenderungsdatum : INTERLIS.XMLDate;
+      Typ : MANDATORY REFERENCE TO (EXTERNAL) LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge.LZ_Katalog_Typ;
+    END LZ_Flaeche;
+
+    ASSOCIATION LZFlaecheProjekt = 
+      rZone -- {2..*} LZ_Flaeche;   
+      rProjekt -- {0..1} MeliorationsProjekt;
+    END LZFlaecheProjekt;
+
+  END Zonengrenzen;
+
+END LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24.
