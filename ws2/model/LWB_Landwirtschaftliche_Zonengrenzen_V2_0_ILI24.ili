@@ -37,32 +37,25 @@ VERSION "2023-11-14"  =
     DEPENDS ON LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge;
 
     DOMAIN
-      ProjektID = TEXT*7;
+      ProjektID = TEXT*12;
       
     CLASS MeliorationsProjekt =
       ProjektNummer : MANDATORY ProjektID;
       Bezeichnung : TEXT*200;
       Status : MANDATORY (geplant,laufend,abgeschlossen);
       Eigenschaften : LIST {0..3} OF TEXT*50;
-    MANDATORY CONSTRAINT CheckBezeichnung : Status == #abgeschlossen => DEFINED(Bezeichnung);
     END MeliorationsProjekt;
 
     CLASS LZ_Flaeche =
       Flaeche : MANDATORY GeometryCHLV95_V2.Surface;
       Aenderungsdatum : INTERLIS.XMLDate;
       Typ : MANDATORY REFERENCE TO (EXTERNAL) LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge.LZ_Katalog_Typ;
-    CONSTRAINT CheckDatum: <=2 % Aenderungsdatum >= "2016-01-01" ; 
-    MANDATORY CONSTRAINT CheckFlaeche : (Typ->LZ_Code == 61) => (GeoW_FunctionsExt.GetArea(THIS, "Flaeche") > 5000);
     END LZ_Flaeche;
 
     ASSOCIATION LZFlaecheProjekt = 
       rZone -- {2..*} LZ_Flaeche;   
       rProjekt -- {0..1} MeliorationsProjekt;
     END LZFlaecheProjekt;
-
-    CONSTRAINTS OF LZ_Flaeche =
-      SET CONSTRAINT CheckArea : WHERE rProjekt->Status != #geplant : INTERLIS.areAreas(ALL, UNDEFINED, >>Flaeche);
-    END;
 
   END Zonengrenzen;
 

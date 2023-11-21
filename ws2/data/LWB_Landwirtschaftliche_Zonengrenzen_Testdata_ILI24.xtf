@@ -68142,6 +68142,7 @@
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Typ ili:ref="61"/>
 			</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:LZ_Flaeche>
 			<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:LZ_Flaeche ili:tid="38c865d3-2a47-4756-8946-bc78c2f94626">
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:rProjekt ili:ref="0ae97372-8849-11ee-b9d1-0242ac120002"/>
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Flaeche>
 					<geom:surface>
 						<geom:exterior>
@@ -68530,6 +68531,7 @@
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Typ ili:ref="61"/>
 			</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:LZ_Flaeche>
 			<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:LZ_Flaeche ili:tid="7b1cb17a-7ccb-4906-b76b-289e1cdaf5b7">
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:rProjekt ili:ref="0ae97372-8849-11ee-b9d1-0242ac120002"/>
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Flaeche>
 					<geom:surface>
 						<geom:exterior>
@@ -80991,6 +80993,15 @@
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Aenderungsdatum>2015-12-03</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Aenderungsdatum>
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Typ ili:ref="52"/>
 			</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:LZ_Flaeche>
+			<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:MeliorationsProjekt ili:tid="0ae97372-8849-11ee-b9d1-0242ac120002">
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:ProjektNummer>2022-AG</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:ProjektNummer>
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Bezeichnung>Melioration Hinterberg Süd</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Bezeichnung>
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Status>abgeschlossen</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Status>
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>Gesamtmelioration</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>Los 4 J4</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>Los 5 J4</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>2022-AG</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>
+			</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:MeliorationsProjekt>
 			<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:MeliorationsProjekt ili:tid="fa3ed182-82eb-11ee-b962-0242ac120002">
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:ProjektNummer>2022-AG</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:ProjektNummer>
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Bezeichnung>Melioration Hinterberg Nord</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Bezeichnung>
@@ -80999,7 +81010,7 @@
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>Los 4 J4</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>
 			</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:MeliorationsProjekt>
 			<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:MeliorationsProjekt ili:tid="a49ac986-82f8-11ee-b962-0242ac120002">
-				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:ProjektNummer>2022-SO</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:ProjektNummer>
+				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:ProjektNummer>2022.1-SO</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:ProjektNummer>
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Bezeichnung></LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Bezeichnung>
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Status>abgeschlossen</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Status>
 				<LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>Teilmelioration</LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24:Eigenschaften>

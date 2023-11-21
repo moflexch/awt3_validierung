@@ -4,7 +4,7 @@
 
 ## Ziel & Übersicht
 
-Dieser Workshop zeigt im Rahmen einer Einführung die Implementierung von einem halben Dutzend fiktiven Konsistenzbedingungen (Constraints) zum Schulungsmodell *LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24*.
+Dieser Workshop zeigt im Rahmen einer Einführung die Implementierung von einem halben Dutzend fiktiver Konsistenzbedingungen (Constraints) zum Schulungsmodell *LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24*.
 
 Anhand dieses Beispiels werden sowohl verschiedene Constraint-Typen wie auch verschiedene Implementierungsvarianten gezeigt.
 Diese Constraint-Typen prüfen Bedingungen in bezug auf den Hauptdatensatz sowie auf die Katalog-Referenzen und nutzen unterschiedliche Funktionen aus den Funktionsbibliotheken Text (https://www.interlis.ch/download/interlis2/Text_d.pdf) sowie die Open-Source-Bibliothek von GeoWerkstatt (https://github.com/GeoWerkstatt/geow-interlis-functions).
@@ -26,7 +26,7 @@ Verzeichnis | Datei    | Zweck
 .\model          | LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24_AddChecks.ili   | Validierungsmodell 
 .\data          | LWB_Landwirtschaftliche_Zonengrenzen_Testdata_ILI24.xtf   | Geodatensatz (INTERLIS 2.4, reduziert auf 100 Objekte, Quelle: https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen?.language=en)
 .\data          | LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.xml   | Katalog der Zonen-Typen (INTERLIS 2.4)
-.\model\_valid          | div   | Lösungsdateien
+.\model\\_solution          | div   | Lösungsdateien
 
 Hinweis: Sowohl die Schulungsdaten wie auch die dazugehörigen Modelle wurden für diesen Workshop erweitert bzw. manipuliert und sind ausschliesslich für diesen Zweck bestimmt.
 
@@ -132,7 +132,7 @@ Erläuterung:
 
 ### Bedingung#4: Keine Flächen des Types 61 unter 5000m2 ![2.3](https://img.shields.io/badge/2.3-darkgreen.svg?style=flat-square) ![2.4](https://img.shields.io/badge/2.4-blue.svg?style=flat-square)
 
-*Ziel: Es sollen keine Flächen des Typs 61 (Wert aus Katalog) im Datensatz existieren, welche eine Fläche von weniger als 5000m2 haben.*
+*Ziel: Es sollen keine Flächen des Typs 61 (Wert aus Katalog) im Datensatz existieren, welche eine Fläche von weniger als 10000m2 haben.*
 
 Diesen Constraint setzen wir wiederum als MANDATORY CONSTRAINT auf und setzen die beiden Bedingungen aus der Aufgabenstellung mittels OR-Verknüpfung zusammen. Doch dazu etwas später.
 Der erste Teil des Ausdrucks testet grundsätzlich auf den Eintrag Typ. Da dieser im Modell mit einer Katalog-Referenz spezifiziert ist, müssen wir hier einen sog. Attributpfad verwenden (weitere Erläuterung siehe unten).
@@ -141,7 +141,7 @@ Der zweite Teil des Terms testet die Geometrie gegenüber dem geforderten Fläch
 Die beiden Terme werden darum mittels ``OR`` verknüpft, um nur den einen Fall (Typ=61) behandeln zu müssen. Der Constraint will ja nicht, dass alle Flächen welche nicht des Typs 61 sind, kleiner als 5000m2 sein müssen (Ausschliessung des Umkehrfalls). Bei OR funktioniert die Term-Auswertung so, dass von links nach rechts so lange geprüft wird, bis ein Term mit Wahr evaluiert wird (weil dann ja auch der gesamte Ausdruck erfüllt ist).
 
 ```
-MANDATORY CONSTRAINT CheckFlaeche : (Typ->LZ_Code != 61) OR (GeoW_FunctionsExt.GetArea(THIS, "Flaeche") > 5000); 
+MANDATORY CONSTRAINT CheckFlaeche : (Typ->LZ_Code != 61) OR (GeoW_FunctionsExt.GetArea(THIS, "Flaeche") > 10000); 
 ```
 
 Erläuterung:
@@ -150,7 +150,7 @@ Erläuterung:
 
 * ``Typ->LZ_Code != 61`` : Der Attributpfad vom Attribut 'Typ' über die Katalogreferenz zum Katalog-Attribut 'LZ_Code' liefert den Wert, welcher dann dahingehend geprüft wird, dass er nicht 61 ist. Entspricht er nicht 61 wird der Term mit 'wahr' evaluiert und entsprechend der ganze Constraint als erfüllt betrachtet. Ist er 'falsch' so wird der zweite Term ausgewertet.
 
-* ``GeoW_FunctionsExt.GetArea(THIS, "Flaeche") > 5000`` : ruft die Flächenberechnungs-Methode GetArea() aus der Funktionsbibliothek GeoW_FunctionsExt auf und übergibt dieser das aktuelle Kontext-Objekt (THIS) sowie der Name des Geometrie-Attributes. Die Funktion liefert den m2-Wert der Fläche zurück, welche dann verglichen wird.
+* ``GeoW_FunctionsExt.GetArea(THIS, "Flaeche") > 10000`` : ruft die Flächenberechnungs-Methode GetArea() aus der Funktionsbibliothek GeoW_FunctionsExt auf und übergibt dieser das aktuelle Kontext-Objekt (THIS) sowie der Name des Geometrie-Attributes. Die Funktion liefert den m2-Wert der Fläche zurück, welche dann verglichen wird.
 
 ---
 **Hinweis zu diesem Constraint:**

@@ -52,7 +52,7 @@ VERSION "2023-11-14"  =
       Aenderungsdatum : INTERLIS.XMLDate;
       Typ : MANDATORY REFERENCE TO (EXTERNAL) LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.LZ_Kataloge.LZ_Katalog_Typ;
     CONSTRAINT CheckDatum: <=2 % Aenderungsdatum >= "2016-01-01" ; 
-    MANDATORY CONSTRAINT CheckFlaeche : (Typ->LZ_Code != 61) OR (GeoW_FunctionsExt.GetArea(THIS, "Flaeche") > 5000);
+    MANDATORY CONSTRAINT CheckFlaeche : (Typ->LZ_Code != 61) OR (GeoW_FunctionsExt.GetArea(THIS, "Flaeche") > 10000);
     END LZ_Flaeche;
 
     ASSOCIATION LZFlaecheProjekt = 

@@ -9,17 +9,7 @@ VERSION "2023-11-14"  =
 
   VIEW TOPIC Zonengrenzen =
   DEPENDS ON LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24.Zonengrenzen;
-  
-	  VIEW vMeliorationsProjekt
-    	PROJECTION OF LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24.Zonengrenzen.MeliorationsProjekt;
-        WHERE MeliorationsProjekt->Status == #abgeschlossen;
-    =
-        ALL OF MeliorationsProjekt;
- 
-        UNIQUE CheckProjNr : ProjektNummer;
-        EXISTENCE CONSTRAINT CheckEigenschaften : ProjektNummer REQUIRED IN LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24.Zonengrenzen.MeliorationsProjekt:Eigenschaften;
 
-    END vMeliorationsProjekt;
 
   END Zonengrenzen;
 
