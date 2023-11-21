@@ -230,8 +230,9 @@ additionalModels="LWB_Landwirtschaftliche_Zonengrenzen_V2_0_ILI24_AddChecks"
 Die Angabe der Datei bei der Validierung erfolgt mittels dem Parameter ``--config .\addchecks.ini``
 
 Der entsprechend ergänzte Aufruf auf den ilivalidator sieht dann wie folgt aus:
+
 ```
-```java -jar ilivalidator-1.14.0-SNAPSHOT.jar  --allObjectsAccessible --trace --config .\addchecks.ini --modeldir ".\model\;https://models.interlis.ch" .\data\LWB_Landwirtschaftliche_Zonengrenzen_Testdata_ILI24.xtf .\data\LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.xml```
+java -jar ilivalidator-1.14.0-SNAPSHOT.jar  --allObjectsAccessible --trace --config .\addchecks.ini --modeldir ".\model\;https://models.interlis.ch" .\data\LWB_Landwirtschaftliche_Zonengrenzen_Testdata_ILI24.xtf .\data\LWB_Landwirtschaftliche_Zonengrenzen_Kataloge_V2_0_ILI24.xml```
 ```
 
 ---
