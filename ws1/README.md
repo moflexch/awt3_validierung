@@ -1,7 +1,7 @@
 ## Dokumentation zum Workshop 1: _Datenqualität und INTERLIS: ilivalidator nutzen und verstehen_
 
 ### 1. Herunterladen der Verzeichnisstruktur:
-#todo: Quelle: [Discourse Forum](https://interlis.discourse.group/uploads/short-url/edlURQdNdBrci3eyDObGTibss5P.zip)
+Quelle: [Release auf Github](https://github.com/moflexch/awt3_validierung/releases/download/ws1ready/ws_1.zip)
 
 **Inhalt der ZIP-Datei**
 * ilivalidator (Entwicklerversion)
@@ -192,7 +192,7 @@ END MeliorationsProjekt;
 Gemäss Datenmodell muss jedes Objekt der Klasse _LZ\_Flaeche_ ein Attribut `Aenderungsdatum` besitzen, welches ein gültiges Datum (`INTERLIS.XMLDate`) enthält. Das Datum beim ersten bemängelten Objekt (tid="a450...") ist ungültig (32. Dezember).
 Beim zweiten bemängelten Objekt (tid="fa3e...") gehört der Wert im Attribut `Status` (_lauffend_) nicht zu den zulässigen Werten (falsche Rechtschreibung).
 
-#### 10. Doppelte Werte
+### 10. Doppelte Werte
 ilivalidator aufrufen und fehlerhafte Transferdatei `Zonengrenzen_Testdata_C.xtf` übergeben:
 
 Ausgabe:
