@@ -130,7 +130,7 @@ Erläuterung:
 
 ---
 
-### Bedingung#4: Keine Flächen des Types 61 unter 5000m2 ![2.3](https://img.shields.io/badge/2.3-darkgreen.svg?style=flat-square) ![2.4](https://img.shields.io/badge/2.4-blue.svg?style=flat-square)
+### Bedingung#4: Keine Flächen des Types 61 unter 10000m2 ![2.3](https://img.shields.io/badge/2.3-darkgreen.svg?style=flat-square) ![2.4](https://img.shields.io/badge/2.4-blue.svg?style=flat-square)
 
 *Ziel: Es sollen keine Flächen des Typs 61 (Wert aus Katalog) im Datensatz existieren, welche eine Fläche von weniger als 10000m2 haben.*
 
